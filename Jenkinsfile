@@ -4,6 +4,7 @@ pipeline {
         stage('Bootstrap') {
             steps {
                 stash name: 'runner', includes: 'tools/runner.ps1'
+                stash name: 'downloader', includes: 'tools/downloader.ps1'                
             }
         }
         stage('First') {
@@ -75,10 +76,12 @@ pipeline {
             node('script')
             {
                 unstash name: 'runner'
+                unstash name: 'downloader'
                 unstash name: 'serverlog'
                 unstash name: 'test'
                 bat "type  *.txt > buildlog.txt"
                 postTemp()
+                bat "log.txt > buildlog.txt"
                 archiveArtifacts artifacts: 'buildlog.txt', allowEmptyArchive: true
                 bat "echo Build succeeded > text.txt"
                 postStatus("text.txt")
