@@ -14,11 +14,11 @@ pipeline {
                 {               
                     try
                     {
-                        bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\run.ps1 > text.txt"
+                        bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\run.ps1"
                     }
                     catch (Exception e)
                     {
-                        $_ | Out-File text.txt -Append
+                        throw e
                     }
                     finally
                     {
