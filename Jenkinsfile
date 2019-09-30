@@ -10,13 +10,16 @@ pipeline {
         stage('First') {
             steps {
                 powershell 'echo first'
-                try {
+                try
+                {
                 bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\run.ps1 > text.txt"
                 }
-                catch {
                 catch (Exception e)
+                {
+                throw e 
                 }
-                finally {
+                finally
+                {
                 stash name: 'test', includes: 'text.txt'
                 }
             }
