@@ -97,7 +97,7 @@ void postStatus(LogFile)
 void postTemp() 
 {
     withCredentials([usernamePassword(credentialsId: '2e2accd9-7150-4f79-8450-88f7d3afc050', passwordVariable: 'username', usernameVariable: 'password')]) {
-       bat "curl '${BUILD_URL}/consoleText' -O log.txt --user 'username:password'"
+       bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile curl '${BUILD_URL}/consoleText' -O log.txt --user 'username:password'"
     }
 }
 
