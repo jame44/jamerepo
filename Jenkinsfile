@@ -39,7 +39,7 @@ pipeline {
                         }
                     }
                 }
-                success
+                failure
                 {
                     node('script')
                     {
@@ -70,7 +70,7 @@ pipeline {
                         }
                     }
                 }
-                success
+                failure
                 {
                     node('script')
                     {
