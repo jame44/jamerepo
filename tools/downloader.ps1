@@ -7,6 +7,6 @@ Param(
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 $pair = "${username}:${password}"
-$cred = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($pair)
+$cred = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($pair))
 
 Invoke-WebRequest $Url -Outfile log.txt -Credential $cred
