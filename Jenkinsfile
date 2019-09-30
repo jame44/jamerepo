@@ -78,7 +78,7 @@ pipeline {
                 unstash name: 'serverlog'
                 unstash name: 'test'
                 bat "type  *.txt > buildlog.txt"
-                bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile curl '${BUILD_URL}/consoleText' -O log.txt --user "username:password""
+                bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile curl '${BUILD_URL}/consoleText' -O log.txt --user 'username:password'"
                 bat "log.txt > buildlog.txt"
                 archiveArtifacts artifacts: 'buildlog.txt', allowEmptyArchive: true
                 bat "echo Build succeeded > text.txt"
