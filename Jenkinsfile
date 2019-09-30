@@ -81,7 +81,7 @@ pipeline {
                 unstash name: 'test'
                 bat "type  *.txt > buildlog.txt"
                 postTemp()
-                bat "log.txt > buildlog.txt"
+                bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile Get-Content ./log.txt -Tail 10 > buildlog.txt"
                 archiveArtifacts artifacts: 'buildlog.txt', allowEmptyArchive: true
                 bat "echo Build succeeded > text.txt"
                 postStatus("text.txt")
