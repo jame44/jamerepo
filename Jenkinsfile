@@ -90,7 +90,7 @@ pipeline {
 void postStatus(LogFile)
 {
     withCredentials([string(credentialsId: 'ghprbuilderplugin', variable: 'TOKEN')]) {
-        bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\tools\\runner.ps1 -Logfile '${WORKSPACE}\\${LogFile}' -PullRequestId 24 -Token ${TOKEN}"
+        bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\tools\\runner.ps1 -Logfile '${WORKSPACE}\\${LogFile}' -PullRequestId 1 -Token ${TOKEN}"
     }
 }
 
