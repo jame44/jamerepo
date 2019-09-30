@@ -79,7 +79,6 @@ pipeline {
                 unstash name: 'test'
                 bat "type  *.txt > buildlog.txt"
                 postTemp()
-                bat "log.txt > buildlog.txt"
                 archiveArtifacts artifacts: 'buildlog.txt', allowEmptyArchive: true
                 bat "echo Build succeeded > text.txt"
                 postStatus("text.txt")
