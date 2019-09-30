@@ -19,7 +19,6 @@ pipeline {
                     catch (Exception e)
                     {
                         throw e
-                        stash name: 'test', includes: 'text.txt'
                     }
                     finally
                     {
