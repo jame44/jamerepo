@@ -99,7 +99,7 @@ void postStatus(LogFile)
 
 void postTemp() 
 {
-    withCredentials([usernamePassword(credentialsId: '2e2accd9-7150-4f79-8450-88f7d3afc050', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
+    withCredentials([usernamePassword(credentialsId: 'jenkinsauth', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
         
         bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\tools\\downloader.ps1 -Username ${USERNAME} -Password ${PASSWORD} -Url ${BUILD_URL}/consoleText"
     }
