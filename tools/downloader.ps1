@@ -6,7 +6,10 @@ Param(
 #Bootstrapping agent in case we need it
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-$pair = "${username}:${password}"
-$cred = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($pair))
 
-Invoke-WebRequest $Url -Outfile log.txt -Credential $cred
+$b = [System.Text.Encoding]::UTF8.GetBytes($username + ":" + $password)
+$p = [System.Convert]::ToBase64String($b)
+
+$cred = "Basic " + $p
+
+Invoke-WebRequest $Url -Outfile log.txt -Headers @{"Authorization"=$cred}
