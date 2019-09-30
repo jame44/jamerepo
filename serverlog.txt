@@ -1,0 +1,11 @@
+==> azure-arm: WARNING: Zone resiliency may not be supported in North Europe, checkout the docs at https://docs.microsoft.com/en-us/azure/availability-zones/
+==> azure-arm: Creating resource group ...
+==> azure-arm:  -> ResourceGroupName : 'packer-Resource-Group-f0egeqoyb1'
+==> azure-arm:  -> Location          : 'North Europe'
+==> azure-arm:  -> Tags              :
+==> azure-arm: Validating deployment template ...
+==> azure-arm:  -> ResourceGroupName : 'packer-Resource-Group-f0egeqoyb1'
+==> azure-arm:  -> DeploymentName    : 'pkrdpf0egeqoyb1'
+==> azure-arm: Deploying deployment template ...
+==> azure-arm:  -> ResourceGroupName : 'packer-Resource-Group-f0egeqoyb1'
+==> azure-arm:  -> DeploymentName    : 'pkrdpf0egeqoyb1'
