@@ -14,11 +14,12 @@ pipeline {
                 {               
                     try
                     {
-                        bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\run.ps1 | Out-File text.txt"
+                        bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\run.ps1 | Out-File .\\text.txt"
                     }
                     catch (Exception e)
                     {
-                        throw e 
+                        throw e
+                        stash name: 'test', includes: 'text.txt'
                     }
                     finally
                     {
