@@ -10,6 +10,7 @@ pipeline {
         stage('First') {
             steps {
                 powershell 'echo first'
+                bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\run.ps1 > text.txt
                 stash name: 'test', includes: 'text.txt'
             }
             post
