@@ -83,7 +83,7 @@ pipeline {
                 postTemp()
                 archiveArtifacts artifacts: 'log.txt', allowEmptyArchive: true
                 bat "echo Build succeeded > text.txt"
-                postStatus("text.txt")
+                postStatus("log.txt")
             }
         }
     }
