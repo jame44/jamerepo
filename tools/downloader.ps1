@@ -14,4 +14,5 @@ $cred = "Basic " + $p
 
 Invoke-WebRequest $Url -Outfile log.txt -Headers @{"Authorization"=$cred}
 
-Get-Content ./log.txt -Tail 100 > log.txt
+$a = Get-Content log.txt -Tail 100
+$a > log.txt
