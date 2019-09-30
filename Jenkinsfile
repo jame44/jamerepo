@@ -14,7 +14,7 @@ pipeline {
                 {               
                     try
                     {
-                        bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\run.ps1 > text.txt 2>&1"
+                        bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\run.ps1 *>&1 > text.txt"
                     }
                     catch (Exception e)
                     {
