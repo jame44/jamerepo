@@ -33,15 +33,17 @@ pipeline {
             }
             post
             {
-            dir(MY_WORKSPACE) {
+
                 always
                 {
                     node('script')
                     {
+                        dir(MY_WORKSPACE) {
                         script
                         {
                             unstash name: 'test'
                             archiveArtifacts artifacts: 'text.txt', allowEmptyArchive: true
+                        }
                         }
                     }
                 }
@@ -56,7 +58,6 @@ pipeline {
                         }
                     }
                 }
-            }
             }            
         }
         stage('Second') {
