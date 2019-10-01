@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        MY_WORKSPACE = ""
+    }
     stages {
         stage('Bootstrap') {
             steps {
@@ -11,6 +14,7 @@ pipeline {
             steps {
                 powershell 'echo first'
                 script
+                MY_WORKSPACE = WORKSPACE
                 {               
                     try
                     {
@@ -29,6 +33,7 @@ pipeline {
             }
             post
             {
+            dir(MY_WORKSPACE) {
                 always
                 {
                     node('script')
@@ -50,7 +55,8 @@ pipeline {
                             postStatus("text.txt")
                         }
                     }
-                }                
+                }
+            }
             }            
         }
         stage('Second') {
