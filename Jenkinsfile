@@ -19,6 +19,7 @@ pipeline {
                     catch (Exception e)
                     {
                         powershell 'echo error!!'
+                        throw e
                     }
                     finally
                     {
