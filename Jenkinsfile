@@ -12,8 +12,18 @@ pipeline {
                 powershell 'echo first'
                 script
                 {               
-                bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\run.ps1 > text.txt 2>&1"
-                stash name: 'test', includes: 'text.txt'
+                    try
+                    {
+                        bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\run.ps1 > text.txt 2>&1"
+                    }
+                    catch (Exception e)
+                    {
+                        throw e
+                    }
+                    finally
+                    {
+                        stash name: 'test', includes: 'text.txt'
+                    }
                 }
             }
             post
