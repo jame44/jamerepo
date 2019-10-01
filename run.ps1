@@ -8,5 +8,5 @@ echo "Running step 2"
 
 
 echo "Running step 3"
-[IO.File]::ReadAllText(tesrrrr.txt)
+
 echo "Running step 4"
