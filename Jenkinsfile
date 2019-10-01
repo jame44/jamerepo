@@ -14,8 +14,8 @@ pipeline {
             steps {
                 powershell 'echo first'
                 script
-                MY_WORKSPACE = WORKSPACE
-                {               
+                {   
+                    MY_WORKSPACE = WORKSPACE
                     try
                     {
                         bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\run.ps1 > text.txt 2>&1"
