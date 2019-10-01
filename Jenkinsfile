@@ -18,7 +18,7 @@ pipeline {
                     }
                     catch (Exception e)
                     {
-                        throw e
+                        powershell 'echo error!!'
                     }
                     finally
                     {
