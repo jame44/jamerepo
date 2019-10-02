@@ -8,3 +8,9 @@ ASLDKAlks s sssd s dsfewk. Wsdfjfkew sadfwe dsfwef ds, sdfwerfwf sdfsdfs. Ad dfd
 
 Asdf ask k wqeasd j qweasdasd n qwe jasdasd.
 
+## Build links
+[Master build](https://jks.strangeloopgames.com/job/Eco%20Master/lastSuccessfulBuild/)
+
+[Staging build](https://jks.strangeloopgames.com/job/Eco%20Staging/lastSuccessfulBuild/)
+
+[Release build](https://jks.strangeloopgames.com/job/Eco%20Release/lastSuccessfulBuild/)
