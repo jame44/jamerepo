@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         MY_WORKSPACE = ""
+        runner = "ls -la"
     }
     stages {
         stage('Bootstrap') {
