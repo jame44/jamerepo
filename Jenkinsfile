@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         MY_WORKSPACE = ""
-        runner = "ls -la"
+        runner = "pwd"
     }
     stages {
         stage('Bootstrap') {
