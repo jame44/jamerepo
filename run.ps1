@@ -1,8 +1,9 @@
 Start-Transcript -path text.txt -append
 echo "I am run!"
-ls
+
 echo "Running step 1"
 
+$runner
 
 echo "Running step 2"
 
