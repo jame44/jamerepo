@@ -25,7 +25,7 @@ pipeline {
                             $runner
                         '''
 }
-                        bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\run.ps1 > folder\folder\text.txt 2>&1"
+                        bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile .\\run.ps1 > text.txt 2>&1"
                     }
                     catch (Exception e)
                     {
@@ -48,8 +48,7 @@ pipeline {
                         dir(MY_WORKSPACE) {
                         script
                         {
-                            unstash name: 'test'
-                            archiveArtifacts artifacts: 'text.txt', allowEmptyArchive: true
+                            postStatus("text.txt")
                         }
                         }
                     }
