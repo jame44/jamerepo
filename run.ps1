@@ -3,7 +3,7 @@ echo "I am run!"
 
 echo "Running step 1"
 
-$runner
+${env.runner}
 
 echo "Running step 2"
 
