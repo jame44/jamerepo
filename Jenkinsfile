@@ -108,8 +108,9 @@ pipeline {
                     bat "type  *.txt > buildlog.txt"
                     postTemp()
                     archiveArtifacts artifacts: 'log.txt', allowEmptyArchive: true
-                    bat "echo Build succeeded > text.txt"
-                    postStatus("log.txt")
+                    
+                    bat "echo Build succeeded > folder\folder\text.txt"
+                    postStatus("folder\\folder\\text.txt")
                 }
             }
         }
