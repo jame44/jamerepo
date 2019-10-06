@@ -27,7 +27,7 @@ pipeline {
                                 bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile pwd"
                                 bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile ls"
                                 archiveArtifacts artifacts: 'text.txt', allowEmptyArchive: true
-                                postStatus("text.txt")
+                                postStatus("tools/build.txt")
                             }
                         }
                     }
