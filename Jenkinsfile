@@ -39,7 +39,8 @@ pipeline {
         {
             node('script')
             {
-                dir(MY_WORKSPACE) {
+                dir(MY_WORKSPACE) 
+                {
                     bat "echo invoked from first step"
                     bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile pwd"
                     bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile ls"
