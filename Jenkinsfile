@@ -24,7 +24,7 @@ pipeline {
                             script
                             {
                                 bat "echo invoked from first step"
-                                bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile  Get-Content .\\tools\build.txt -tail 3 >build1.txt"
+                                bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile  Get-Content .\\tools\\build.txt -tail 3 >build1.txt"
                                 postStatus("tools/build1.txt")
                             }
                         }
