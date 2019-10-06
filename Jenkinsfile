@@ -24,10 +24,8 @@ pipeline {
                             script
                             {
                                 bat "echo invoked from first step"
-                                bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile pwd"
-                                bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile ls"
-                                archiveArtifacts artifacts: 'text.txt', allowEmptyArchive: true
-                                postStatus("tools/build.txt")
+                                bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile  Get-Content .\\tools\build.txt -tail 3 >build1.txt"
+                                postStatus("tools/build1.txt")
                             }
                         }
                     }
