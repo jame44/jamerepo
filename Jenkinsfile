@@ -24,7 +24,7 @@ pipeline {
                             script
                             {
                                 bat "echo invoked from first step"
-                                bat "msbuild.exe ./Server/Server.sln -fl1 -flp1:'logfile=Errors.log;errorsonly'"
+                                bat "\"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\msbuild.exe\" ./Server/Server.sln -fl1 -flp1:'logfile=Errors.log;errorsonly'"
                                 bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile  Get-Content .\\tools\\build.txt -tail 7 > build1.txt"
                                 postStatus("build1.txt")
                             }
