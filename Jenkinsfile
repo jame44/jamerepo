@@ -23,7 +23,7 @@ pipeline {
                         dir(MY_WORKSPACE) {
                             script
                             {
-                                bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile Select-String -Path .\\tools\\build.txt -Pattern '-kukaracha:' -Context 5 > message.txt"
+                                bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile Select-String -Path .\\tools\\build.txt -Pattern '-kukaracha' -Context 5 > message.txt"
                                 postStatus("message.txt")
                             }
                         }
