@@ -23,8 +23,8 @@ pipeline {
                         dir(MY_WORKSPACE) {
                             script
                             {
-                                bat "echo invoked from first step > build1.txt"
-                                postStatus("build1.txt")
+                                bat "powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile Get-Content .\\tools\\build.txt | Select-String '-kukaracha:' -Context 5 >> message.txt"
+                                postStatus("message.txt")
                             }
                         }
                     }
